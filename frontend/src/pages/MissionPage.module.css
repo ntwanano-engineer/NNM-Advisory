@@ -1,0 +1,144 @@
+/* MissionPage.module.css - Bain-style mission page. */
+
+.hero {
+  position: relative;
+  color: var(--c-on-dark);
+  padding: 5.5rem 1.5rem 6rem;
+  background-color: var(--c-navy);
+  background-image: url('/bg-hero.svg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,15,15,0.85) 0%, rgba(15,15,15,0.45) 70%);
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff6b6b;
+}
+
+.title {
+  margin: 0 0 1.25rem;
+  max-width: 20ch;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 5.5vw, 3.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 0;
+  max-width: 60ch;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--c-on-dark-dim);
+}
+
+.body {
+  padding: 5rem 1.5rem;
+  background-color: var(--c-canvas);
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.sectionHeading {
+  margin: 0 0 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--c-ink);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--c-ink);
+}
+
+.bodyText {
+  margin: 0 0 3rem;
+  max-width: 68ch;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--c-body);
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--c-line);
+}
+
+.value {
+  padding: 2rem 1.75rem;
+  border-bottom: 1px solid var(--c-line);
+  border-right: 1px solid var(--c-line);
+}
+
+.valueTitle {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.valueTitle::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--c-accent);
+  margin-bottom: 0.75rem;
+}
+
+.valueBody {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--c-body);
+}
+
+.ctaBand {
+  padding: 4rem 1.5rem 4.5rem;
+  background-color: var(--c-navy);
+  color: var(--c-on-dark);
+}
+
+.ctaHeading {
+  margin: 0 0 1rem;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.ctaLink {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+.ctaLink:hover {
+  color: #ffffff;
+}

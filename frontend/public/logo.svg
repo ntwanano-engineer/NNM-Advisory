@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="NNM Advisory">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#cc0000"/>
+      <stop offset="1" stop-color="#e23b3b"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect x="2" y="12" width="72" height="72" rx="4" fill="url(#g)"/>
+    <path d="M18 70 V26 L38 56 V26 M38 70 V26 L58 56 V26" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <text x="92" y="52" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff">NNM</text>
+  <text x="92" y="78" font-family="Inter, Arial, sans-serif" font-size="15" letter-spacing="3" fill="#d6d6d6">ADVISORY</text>
+</svg>

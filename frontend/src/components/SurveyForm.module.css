@@ -1,0 +1,208 @@
+/* ---------------------------------------------------------------------------
+ * SurveyForm.module.css
+ *
+ * Shared survey form base (Requirements 6.4, 7.4, 7.8).
+ *
+ * Layout strategy — no horizontal overflow from 320px to 2560px:
+ * - `width: 100%` + `max-width` on the form, relying on the global
+ *   `box-sizing: border-box` so padding never pushes inputs past the viewport.
+ * - Rating scales wrap onto multiple rows on narrow screens via flex-wrap.
+ * - `overflow-wrap: anywhere` prevents long question text or error copy from
+ *   forcing horizontal scroll.
+ * ------------------------------------------------------------------------- */
+
+.form {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  overflow-wrap: anywhere;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.legend {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.labelText {
+  font-weight: 600;
+}
+
+/* Required indicator shown before any submit attempt (Requirement 7.8). */
+.requiredHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.asterisk {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.requiredText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #b91c1c;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* ----- Rating scale -------------------------------------------------------- */
+
+.ratingScale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ratingOption {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  padding: 0.5rem 0.625rem;
+  font-size: 1rem;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ratingOption:hover {
+  border-color: #94a3b8;
+}
+
+.ratingOptionSelected {
+  color: #ffffff;
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+/* Visually hide the native radio but keep it accessible and focusable. */
+.ratingInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Visible focus ring driven by the hidden radio's focus state. */
+.ratingInput:focus-visible + .ratingValue {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
+.ratingValue {
+  font-weight: 600;
+}
+
+.ratingEndLabel {
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* ----- Open-ended text ----------------------------------------------------- */
+
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.textarea:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+  border-color: #2563eb;
+}
+
+.textarea:disabled {
+  background-color: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.charCount {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #64748b;
+  text-align: right;
+}
+
+/* Inline validation error shown adjacent to the question (Requirements 6.4, 7.4). */
+.fieldError {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #b91c1c;
+}
+
+/* ----- Submit -------------------------------------------------------------- */
+
+.submit {
+  align-self: flex-start;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.submit:hover:not(:disabled),
+.submit:focus-visible:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.submit:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}

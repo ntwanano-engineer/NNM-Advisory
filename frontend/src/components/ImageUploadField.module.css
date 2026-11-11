@@ -1,0 +1,124 @@
+/* ---------------------------------------------------------------------------
+ * ImageUploadField.module.css
+ *
+ * Leadership profile photo upload with client-side validation and preview
+ * (Requirements 9.3, 9.4, 9.5, 9.9).
+ * ------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.input {
+  width: 100%;
+  max-width: 100%;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #0f172a;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Validation / upload error (Requirements 9.4, 9.5). */
+.error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #b91c1c;
+}
+
+/* Successful upload confirmation. */
+.success {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #166534;
+}
+
+/* Preview area shown before the admin confirms (Requirement 9.9). */
+.previewArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+}
+
+.preview {
+  display: block;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.confirm {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.confirm:hover:not(:disabled),
+.confirm:focus-visible:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.confirm:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.cancel {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.cancel:hover:not(:disabled),
+.cancel:focus-visible:not(:disabled) {
+  background-color: #f1f5f9;
+}
+
+.cancel:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

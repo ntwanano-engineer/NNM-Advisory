@@ -1,0 +1,50 @@
+/* ---------------------------------------------------------------------------
+ * ContactPage.module.css
+ *
+ * Contact page layout (Requirement 5.1).
+ *
+ * Mirrors the ServicesPage layout conventions for visual consistency:
+ * - Full-width page with a centred, max-width inner container.
+ * - Centred heading and introductory copy.
+ * - The form column is constrained to a comfortable reading/entry width and
+ *   centred, avoiding horizontal overflow from 320px to 2560px.
+ * ------------------------------------------------------------------------- */
+
+.page {
+  width: 100%;
+  max-width: 100%;
+  padding: 3rem 1rem;
+  background-color: #f8fafc;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0 0 0.75rem;
+  text-align: center;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.intro {
+  margin: 0 auto 2.5rem;
+  max-width: 640px;
+  text-align: center;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* Form column: constrained width, centred within the container. */
+.formWrapper {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}

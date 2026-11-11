@@ -1,0 +1,28 @@
+# Keep the build context small and deterministic (Task 24.8).
+# Excludes build artifacts, the test project, local-dev files, and anything
+# that would bloat the image or leak local configuration into the container.
+
+# .NET build output
+**/bin/
+**/obj/
+
+# Test project — never part of the published API image
+NnmAdvisory.Tests/
+
+# Local development configuration / secrets
+.env
+.env.*
+!.env.sample
+
+# Local runtime artifacts
+logs/
+uploads/
+
+# Docker / VCS / IDE metadata
+Dockerfile
+.dockerignore
+.git/
+.gitignore
+.vs/
+.vscode/
+*.user

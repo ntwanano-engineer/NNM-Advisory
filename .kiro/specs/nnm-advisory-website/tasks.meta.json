@@ -1,0 +1,1656 @@
+{
+  "pbtResults": {
+    "3.3 Write property test for database round-trip persistence": {
+      "status": "passed",
+      "lastRunTimestamp": 1793512234428
+    },
+    "8.4 Write property test for file upload rejection": {
+      "status": "passed",
+      "lastRunTimestamp": 1793513252612
+    },
+    "6.6 Write property test for employee survey anonymity": {
+      "status": "passed",
+      "lastRunTimestamp": 1793514087206
+    },
+    "9.5 Write property test for authentication lockout invariant": {
+      "status": "passed",
+      "lastRunTimestamp": 1793514135632
+    },
+    "6.5 Write property test for survey timestamp invariant": {
+      "status": "passed",
+      "lastRunTimestamp": 1793514186041
+    },
+    "10.4 Write property test for biography length validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1793514765063
+    },
+    "22.1 Write property test for SQL injection safety": {
+      "status": "passed",
+      "lastRunTimestamp": 1793515822585
+    },
+    "23.1 Write property test for CORS rejection": {
+      "status": "passed",
+      "lastRunTimestamp": 1793515876323
+    },
+    "20.6 Write property test for admin content update reflection (frontend)": {
+      "status": "passed",
+      "lastRunTimestamp": 1793517303093
+    }
+  },
+  "executionHistory": {
+    "1. Scaffold repository structure and local development environment": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479400036
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494742804
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495206832
+      }
+    ],
+    "2.1 Initialise .NET Web API project with layered folder structure: `Controllers/`, `Services/`, `Repositories/`, `Models/`, `Infrastructure/`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479400306
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479414620
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793492923956
+      }
+    ],
+    "2.2 Implement startup configuration validation using `IOptions<T>` with data annotations": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479400443
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793492932114
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494186380
+      }
+    ],
+    "2.3 Configure middleware pipeline: HTTPS enforcement, CORS (single allowed origin from config), Serilog structured JSON request logging, global exception handler returning HTTP 500 with generic message and logging UTC timestamp + request path": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479400651
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793492932525
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494187235
+      }
+    ],
+    "2.4 Add `HealthController` with `GET /health` returning HTTP 200": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479400760
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793492933378
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494187914
+      }
+    ],
+    "3.1 Define EF Core entity classes and `NnmDbContext`: `AdminUser`, `CompanyContent`, `ServiceBlock`, `LeadershipProfile`, `ContactSubmission`, `CustomerSurveyResponse`, `EmployeeSurveyResponse`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479400856
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494197160
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494418747
+      }
+    ],
+    "3.2 Create and apply initial EF Core migration producing all seven tables": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479400936
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494743278
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495206589
+      }
+    ],
+    "4.1 Implement `ICompanyProfileRepository` and `CompanyProfileRepository` using EF Core for `CompanyContent`, `ServiceBlock`, and `LeadershipProfile` entities": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401032
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495211879
+      }
+    ],
+    "4.2 Implement `ICompanyProfileService` / `CompanyProfileService` with 5-second in-memory TTL cache for profile, services, and leadership reads": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401119
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512381948
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512599215
+      }
+    ],
+    "4.3 Implement `CompanyProfileController` with endpoints `GET /api/profile`, `GET /api/profile/services`, `GET /api/profile/leadership`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401211
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512857021
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513106765
+      }
+    ],
+    "5.1 Implement `IContactRepository` / `ContactRepository` using EF Core with parameterised queries via EF Core ORM": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401296
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512383385
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512596558
+      }
+    ],
+    "5.2 Implement `IContactService` / `ContactService` with field-level validation: full name ≤ 100 chars, email `local-part@domain.tld`, subject ≤ 150 chars, message 10–2000 chars; persist submission in a transaction; trigger email send after successful persist": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401398
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512855169
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513108092
+      }
+    ],
+    "5.3 Implement `ContactController` with `POST /api/contact`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401486
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513605099
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513792605
+      }
+    ],
+    "6.1 Implement `ISurveyRepository` / `SurveyRepository` for `CustomerSurveyResponse` and `EmployeeSurveyResponse` entities": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401577
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512384777
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512595135
+      }
+    ],
+    "6.2 Implement `ISurveyService` / `SurveyService`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401695
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512857995
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513101856
+      }
+    ],
+    "6.3 Implement `SurveyController` with `POST /api/surveys/customer` and `POST /api/surveys/employee`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401807
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513606182
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513793956
+      }
+    ],
+    "7.1 Define `IEmailService` interface with `SendAcknowledgementEmailAsync` and `SendAdminNotificationEmailAsync`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401905
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495212564
+      }
+    ],
+    "7.2 Implement `AwsSesEmailService` using `AWSSDK.SimpleEmailV2`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479401998
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512386199
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512597954
+      }
+    ],
+    "7.3 Implement `SmtpEmailService` for local development (connects to Mailhog on `SMTP_HOST:SMTP_PORT`)": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402098
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512608398
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512747222
+      }
+    ],
+    "8.1 Define `IImageStorageService` interface with `UploadImageAsync` and `GetPresignedUrlAsync`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402183
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495213047
+      }
+    ],
+    "8.2 Implement `S3ImageStorageService`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402335
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512609808
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512745816
+      }
+    ],
+    "8.3 Implement local-dev image storage provider (filesystem under `IMAGE_STORAGE_PROVIDER=local`) and register via config at startup": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402460
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512610857
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512848003
+      }
+    ],
+    "9.1 Implement `AdminUser` repository and seed a default admin user with a bcrypt-hashed password on first migration": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402588
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495214003
+      }
+    ],
+    "9.2 Implement `IAuthService` / `AuthService`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402696
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512387290
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512593275
+      }
+    ],
+    "9.3 Implement `AuthController` with `POST /api/auth/login` and `POST /api/auth/logout`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402786
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512853298
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513104631
+      }
+    ],
+    "9.4 Configure JWT bearer authentication middleware; apply `[Authorize]` to all admin endpoints": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402886
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513607611
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513795137
+      }
+    ],
+    "10.1 Implement update methods in `CompanyProfileRepository` for `CompanyContent`, `ServiceBlock`, and `LeadershipProfile` entities using EF Core transactions": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479402983
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513116846
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513593983
+      }
+    ],
+    "10.2 Extend `CompanyProfileService` with update methods for tagline, service block fields, and leadership profile biography; invalidate cache on successful write": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403079
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513609804
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513797028
+      }
+    ],
+    "10.3 Implement `AdminController` with `PUT /api/admin/profile`, `PUT /api/admin/services/{id}`, `PUT /api/admin/leadership/{id}`, and `POST /api/admin/leadership/{id}/photo`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403175
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514393144
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514570532
+      }
+    ],
+    "11. Checkpoint — backend complete": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403283
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793519533228
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793519582243
+      }
+    ],
+    "12.1 Initialise React project with TypeScript using Create React App or Vite; install dependencies: `react-router-dom`, `fast-check`, `vitest`, `@testing-library/react`, `@testing-library/user-event`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403429
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479415204
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793492924749
+      }
+    ],
+    "12.2 Create `apiClient.ts` module wrapping `fetch` with: base URL from `REACT_APP_API_URL`, `Authorization` header injection, 30-second `AbortController` timeout, centralised HTTP status → user-facing message mapping": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403537
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793492933605
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494188684
+      }
+    ],
+    "12.3 Implement React Context + `useReducer` global state for auth token and content cache; implement `ProtectedRoute` HOC that reads JWT from localStorage and redirects to `/admin/login` if absent or expired": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403633
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793492934291
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494189643
+      }
+    ],
+    "13.1 Configure React Router with all routes defined in the design: `/`, `/services`, `/about`, `/surveys`, `/surveys/customer`, `/surveys/employee`, `/contact`, `/admin/login`, `/admin`, and `*` (404)": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403736
+      },
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495214856
+      }
+    ],
+    "13.2 Implement persistent `Navbar` component": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403823
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513117715
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513595082
+      }
+    ],
+    "13.3 Implement `Footer` component with company name, copyright notice, and at least one social/contact link; render at 320px–2560px without overflow": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479403916
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512859455
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513103331
+      }
+    ],
+    "14.1 Implement `HeroSection` component displaying \"NNM Advisory\", tagline (≤ 20 words), and \"Contact Us\" CTA button linking to `/contact`; display brand logo at ≥ 48px height with text fallback on `onError`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404009
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513610802
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513798418
+      }
+    ],
+    "14.2 Implement `HomePage` rendering `HeroSection` plus service area summaries (2–6 areas, title ≤ 10 words, description ≤ 40 words) fetched from `GET /api/profile/services`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404093
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514395682
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514571733
+      }
+    ],
+    "15.1 Implement `ServiceBlock` component and `ServicesPage`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404182
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514584428
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515647203
+      }
+    ],
+    "16.1 Implement `LeadershipCard` component displaying photo (pre-signed URL from API), full name, title, and biography; photo minimum 200×200px, maximum 800×800px; fallback on missing photo": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404277
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514585850
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515648454
+      }
+    ],
+    "16.2 Implement `AboutPage` fetching `GET /api/profile/leadership` and rendering `LeadershipCard` for each profile in `display_order` (Ntwanano Mabasa COO first, Ntshovelo Priscilla Novela CIO second)": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404364
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515931880
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516570914
+      }
+    ],
+    "17.1 Implement `ContactForm` component: controlled fields (Full Name, Email, Subject, Message), inline client-side validation (required, length limits, email format), `useForm` hook wrapping `apiClient`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404480
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514587305
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515650031
+      }
+    ],
+    "17.2 Implement `ContactPage` rendering `ContactForm` in the Contact section": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404582
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515933212
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516572315
+      }
+    ],
+    "18.1 Implement shared `SurveyForm` base component supporting rating scale inputs and open-ended text fields; highlight unanswered required questions with inline errors on attempted submit without calling API": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404698
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515659551
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515917139
+      }
+    ],
+    "18.2 Implement `CustomerSurveyPage` using `SurveyForm`: service satisfaction (1–5), NPS score (0–10), open-ended text (≤ 1000 chars); on success display thank-you message within 3 seconds; retain answers on API error": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404786
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515935246
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516573917
+      }
+    ],
+    "18.3 Implement `EmployeeSurveyPage` using `SurveyForm`: employee engagement, workplace satisfaction, open-ended feedback; no PII fields; required questions marked before submit attempt; thank-you message visible ≥ 5 seconds; retain answers on API error": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404884
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515936777
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516576105
+      }
+    ],
+    "18.4 Implement `SurveysPage` as landing page under `/surveys` with links to customer and employee survey routes": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479404992
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515937762
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516577296
+      }
+    ],
+    "19.1 Implement `AdminLoginPage` with username/password form; POST to `POST /api/auth/login`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405085
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515661988
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515915762
+      }
+    ],
+    "20.1 Implement `AdminDashboardPage` (protected by `ProtectedRoute`) listing editable content sections: tagline, service blocks, leadership profiles": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405244
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516583081
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516827140
+      }
+    ],
+    "20.2 Implement `AdminContentEditor` component with form fields for tagline (≤ 150 chars), service block title (≤ 100 chars) and description (≤ 500 chars), and biography (≤ 2000 chars)": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405370
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516839663
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517187345
+      }
+    ],
+    "20.3 Implement `ImageUploadField` component: client-side JPEG/PNG type check, ≤ 5 MB size check, image preview before confirm; POST to `POST /api/admin/leadership/{id}/photo` on confirm": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405473
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516836766
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517189635
+      }
+    ],
+    "20.4 Implement inactivity timer in admin context: reset on any API activity; after 60 minutes of inactivity clear JWT from localStorage and redirect to `/admin/login`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405565
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516838598
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517190879
+      }
+    ],
+    "21. Checkpoint — frontend complete": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405661
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793519587693
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793519613204
+      }
+    ],
+    "24.1 Create VPC with public subnets (10.0.1.0/24, 10.0.2.0/24) and private subnets (10.0.11.0/24, 10.0.12.0/24) in two AZs; configure NAT Gateway in public subnet": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405752
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517200075
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517499032
+      }
+    ],
+    "24.2 Create security groups `sg-alb`, `sg-ecs`, `sg-rds` with rules as specified in the design (ALB: inbound 443 from 0.0.0.0/0; ECS: inbound 8080 from sg-alb only; RDS: inbound 5432 from sg-ecs only)": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405835
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517506173
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517595740
+      }
+    ],
+    "24.3 Provision RDS PostgreSQL 14+ instance (`db.t3.medium`, gp3 storage, auto-scaling) in private subnets; Multi-AZ optional; no public accessibility": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479405928
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517602129
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517786886
+      }
+    ],
+    "24.4 Create S3 bucket for static frontend assets with OAC-only access (no direct public access); create S3 bucket for leadership profile images (no public access)": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406027
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517605027
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517785045
+      }
+    ],
+    "24.5 Create ACM certificates for `nnmadvisory.com`, `www.nnmadvisory.com`, and `api.nnmadvisory.com`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406112
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517603987
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517787946
+      }
+    ],
+    "24.6 Create CloudFront distribution with S3 static bucket as origin (OAC), ACM certificate, HTTP→HTTPS redirect viewer protocol policy, and custom error responses (403/404 → `index.html` HTTP 200)": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406196
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517794716
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517953657
+      }
+    ],
+    "24.7 Create ALB in public subnets with HTTPS:443 listener (ACM certificate for `api.nnmadvisory.com`) forwarding to ECS target group on port 8080; no HTTP:80 listener": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406292
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517796077
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517952117
+      }
+    ],
+    "24.8 Create ECR repository; write multi-stage Dockerfile (`sdk` build stage → `aspnet` runtime stage) for the .NET API; configure ECS task definition and Fargate service (min 1 task) with `awslogs` log driver to CloudWatch log group `/nnm/api`": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406379
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518144812
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518365782
+      }
+    ],
+    "24.9 Store all secrets in AWS Systems Manager Parameter Store as `SecureString`: `/nnm/db/connection-string`, `/nnm/jwt/secret`, `/nnm/ses/sender-email`, `/nnm/ses/admin-email`, `/nnm/s3/images-bucket`, `/nnm/cors/allowed-origin`; configure ECS task role `nnm-api-task-role` with least-privilege IAM policies for SSM, SES, and S3 as specified in the design": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406460
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517961701
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518131974
+      }
+    ],
+    "24.10 Create Route 53 A alias records: `nnmadvisory.com` → CloudFront, `www.nnmadvisory.com` → CloudFront, `api.nnmadvisory.com` → ALB": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406555
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518374924
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518590537
+      }
+    ],
+    "24.11 Configure CloudWatch alarms: ALB 5xx rate > 1% over 5 min → SNS; ECS CPU > 80% over 5 min → auto-scaling trigger; RDS free storage < 20% → SNS": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406670
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518373326
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518591812
+      }
+    ],
+    "24.12 Configure `AWS.Extensions.Configuration.SystemsManager` in the .NET API to load Parameter Store values at startup using path `/nnm/`; configure ECS deployment pipeline step that runs EF Core migrations as a one-off task before promoting new API version": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406751
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518600478
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518911088
+      }
+    ],
+    "25.1 Create `docs/aws-runbook.md` with the following distinct sections:": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406843
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518598752
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518912281
+      }
+    ],
+    "26.1 Generate `docs/NNM Advisory - Requirements Specification.docx` from `requirements.md` containing: cover page (project name \"NNM Advisory Website\", document type \"Requirements Specification\", creation date in DD Month YYYY format), table of contents listing all top-level and second-level headings with page numbers, and all sections (Introduction, Glossary, all 15 Requirements with Acceptance Criteria) with heading hierarchy matching requirements.md": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479406931
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518920579
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793519520326
+      }
+    ],
+    "27. Final checkpoint — wire everything together and verify": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793479407032
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793519618953
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793520284683
+      }
+    ],
+    "2. Bootstrap .NET API project and configuration infrastructure": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494188015
+      }
+    ],
+    "12. Bootstrap React frontend project": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793494189733
+      }
+    ],
+    "3. Database schema and EF Core migrations": [
+      {
+        "executionId": "fd3033f0-c460-48e7-85c4-4d06c5881cef",
+        "chatSessionId": "sess_0b7a69ae-9ada-4e19-8d52-5960a16b57d5",
+        "timestamp": 1793495206692
+      }
+    ],
+    "3.3 Write property test for database round-trip persistence": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512020314
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512084637
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512371603
+      }
+    ],
+    "4.4 Write unit tests for `CompanyProfileService` cache behaviour": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512020583
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513807290
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513923152
+      }
+    ],
+    "5.4 Write property test for contact form validation": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512020836
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513930257
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514383969
+      }
+    ],
+    "5.5 Write property test for contact submission round-trip": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512020925
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514390597
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514573155
+      }
+    ],
+    "6.4 Write property test for survey score validation": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021024
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513931196
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514381873
+      }
+    ],
+    "6.5 Write property test for survey timestamp invariant": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021113
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513932775
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514382895
+      }
+    ],
+    "6.6 Write property test for employee survey anonymity": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021209
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513933938
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514380378
+      }
+    ],
+    "7.4 Write unit tests for email service": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021299
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513114045
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513591481
+      }
+    ],
+    "8.4 Write property test for file upload rejection": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021388
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513114964
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513592567
+      }
+    ],
+    "9.5 Write property test for authentication lockout invariant": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021485
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513934932
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514379113
+      }
+    ],
+    "9.6 Write unit tests for `AuthService`": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021587
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514391553
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514574211
+      }
+    ],
+    "10.4 Write property test for biography length validation": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021685
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514581790
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515644209
+      }
+    ],
+    "10.5 Write property test for admin content update reflection": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021821
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514583288
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515645843
+      }
+    ],
+    "12.4 Write unit tests for `ProtectedRoute`": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512021943
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512029307
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512078454
+      }
+    ],
+    "13.4 Write unit tests for `Navbar`": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512022049
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513808242
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793513922469
+      }
+    ],
+    "17.3 Write unit tests for `ContactForm`": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512022142
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516833953
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517184874
+      }
+    ],
+    "18.5 Write property test for survey form client-side validation": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512022235
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516834818
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517185882
+      }
+    ],
+    "20.5 Write unit tests for `AdminContentEditor`": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512022322
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517197650
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517496522
+      }
+    ],
+    "20.6 Write property test for admin content update reflection (frontend)": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512022434
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517198547
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517497637
+      }
+    ],
+    "22.1 Write property test for SQL injection safety": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512022533
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515662783
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515912950
+      }
+    ],
+    "23.1 Write property test for CORS rejection": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793512022716
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515660303
+      },
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515914743
+      }
+    ],
+    "6. Survey submission — backend": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514383030
+      }
+    ],
+    "14. Home page": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514571876
+      }
+    ],
+    "5. Contact form submission — backend": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793514573371
+      }
+    ],
+    "10. Admin content management — backend": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515645993
+      }
+    ],
+    "15. Services page": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515647337
+      }
+    ],
+    "22. SQL injection safety — backend property test": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515913178
+      }
+    ],
+    "23. CORS policy — backend property test": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515914886
+      }
+    ],
+    "19. Admin login page": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793515916042
+      }
+    ],
+    "16. About Us page and leadership profiles": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793516571082
+      }
+    ],
+    "17. Contact page and form": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517185028
+      }
+    ],
+    "18. Survey pages — frontend": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517186033
+      }
+    ],
+    "20. Admin dashboard and content editor": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793517497858
+      }
+    ],
+    "24. AWS infrastructure — IaC": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518911335
+      }
+    ],
+    "25. AWS deployment runbook document": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793518912419
+      }
+    ],
+    "26. Requirements specification Word document": [
+      {
+        "executionId": "1e3deed9-3575-47b4-999d-f0f9b9f2dea8",
+        "chatSessionId": "sess_273c19eb-5ec9-433f-b895-f84e80fa18ba",
+        "timestamp": 1793519520459
+      }
+    ]
+  }
+}

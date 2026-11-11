@@ -1,0 +1,181 @@
+/* ---------------------------------------------------------------------------
+ * Navbar.module.css - Bain-style top navigation.
+ * Clean white bar, bold dark wordmark with red accent, clearly legible dark
+ * links, red underline indicator, red top keyline. Mobile drawer at < 900px.
+ * Class names/structure preserved for the component + tests.
+ * ------------------------------------------------------------------------- */
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--c-canvas);
+  color: var(--c-ink);
+  border-top: 4px solid var(--c-accent);   /* Bain-style red keyline */
+  border-bottom: 1px solid var(--c-line);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  overflow-wrap: anywhere;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.brand {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--c-ink);
+  text-decoration: none;
+  min-width: 0;
+}
+
+/* Red accent on the final letter-mark, echoing a brand mark. */
+.brand::after {
+  content: '.';
+  color: var(--c-accent);
+}
+
+.brand:hover,
+.brand:focus {
+  color: var(--c-ink);
+}
+
+/* --- Hamburger toggle (mobile only) -------------------------------------- */
+.toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0.55rem;
+  background: transparent;
+  border: 1px solid #cfcfcf;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+.toggleBar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--c-ink);
+}
+
+/* --- Link list ----------------------------------------------------------- */
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+
+.linksOpen {
+  display: flex;
+  padding-top: 0.5rem;
+}
+
+.linkItem {
+  width: 100%;
+}
+
+.link {
+  display: block;
+  padding: 0.95rem 0.25rem;
+  color: var(--c-ink);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--c-accent);
+}
+
+.linkActive {
+  color: var(--c-accent);
+}
+
+/* --- Desktop (>= 900px): horizontal bar ---------------------------------- */
+@media (min-width: 900px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    gap: 1.6rem;
+  }
+
+  .linkItem {
+    width: auto;
+  }
+
+  .link {
+    position: relative;
+    padding: 0.45rem 0;
+    border-bottom: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--c-ink);
+  }
+
+  /* Red underline indicator on hover / active. */
+  .link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.5rem;
+    height: 3px;
+    background: var(--c-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  .link:hover::after,
+  .linkActive::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 1120px) {
+  .links {
+    gap: 2.1rem;
+  }
+  .link {
+    font-size: 1rem;
+  }
+}

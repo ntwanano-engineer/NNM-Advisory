@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- The test project lives under api/NnmAdvisory.Tests; exclude it from the
+       web SDK's default source globbing so its files compile only in the test
+       project. -->
+  <ItemGroup>
+    <Compile Remove="NnmAdvisory.Tests\**\*.cs" />
+    <Content Remove="NnmAdvisory.Tests\**\*" />
+    <None Remove="NnmAdvisory.Tests\**\*" />
+    <EmbeddedResource Remove="NnmAdvisory.Tests\**\*" />
+  </ItemGroup>
+
+  <!-- Seed assets (leadership profile photos) copied to the build output so
+       the local image storage provider can publish them into the uploads
+       directory at startup. These back the leadership rows seeded in the
+       SeedLeadershipProfiles migration (Task 16.2). -->
+  <ItemGroup>
+    <Content Include="SeedAssets\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="4.0.104.8" />
+    <PackageReference Include="AWSSDK.SimpleEmailV2" Version="4.0.106.7" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="dotenv.net" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.*">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.*" />
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageReference Include="Amazon.Extensions.Configuration.SystemsManager" Version="7.*" />
+    <PackageReference Include="CsCheck" Version="3.*" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.*" />
+  </ItemGroup>
+
+</Project>

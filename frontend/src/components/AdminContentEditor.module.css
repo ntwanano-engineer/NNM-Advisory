@@ -1,0 +1,167 @@
+/* ---------------------------------------------------------------------------
+ * AdminContentEditor.module.css
+ *
+ * Config-driven admin content editor (Requirements 9.1, 9.6, 9.7, 9.8).
+ *
+ * Mirrors the ContactForm / AdminDashboardPage layout strategy: full-width
+ * inputs capped by the containing card, flex-column stacking, and
+ * `overflow-wrap: anywhere` so long unbroken content never forces horizontal
+ * scroll between 320px and 2560px.
+ * ------------------------------------------------------------------------- */
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+  border-color: #2563eb;
+}
+
+.input:disabled,
+.textarea:disabled {
+  background-color: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+/* Character counter. Turns red when the field exceeds its limit (Req 9.6). */
+.counter {
+  align-self: flex-end;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.counterOver {
+  align-self: flex-end;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #b91c1c;
+}
+
+/* Live preview panel (Requirement 9.6). */
+.preview {
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.5rem;
+}
+
+.previewHeading {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #475569;
+}
+
+.previewItem {
+  margin: 0 0 0.75rem;
+}
+
+.previewItem:last-child {
+  margin-bottom: 0;
+}
+
+.previewLabel {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.previewValue {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #0f172a;
+  white-space: pre-wrap;
+}
+
+.previewEmpty {
+  color: #94a3b8;
+}
+
+/* Success confirmation banner (Requirement 9.7). */
+.successBanner {
+  padding: 0.875rem 1rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.5rem;
+  color: #166534;
+  font-weight: 600;
+}
+
+/* Error banner (Requirement 9.8). */
+.errorBanner {
+  padding: 0.875rem 1rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  color: #991b1b;
+}
+
+.save {
+  align-self: flex-start;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.save:hover:not(:disabled),
+.save:focus-visible:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.save:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}

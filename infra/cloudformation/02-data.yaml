@@ -1,0 +1,165 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  NNM Advisory - Data stack. RDS PostgreSQL 16, private S3 bucket for
+  leadership photos, security groups, and the /nnm/* SSM parameters the API
+  reads in Production.
+
+Parameters:
+  AppName:
+    Type: String
+    Default: nnm
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+  PrivateSubnets:
+    Type: List<AWS::EC2::Subnet::Id>
+  DbUsername:
+    Type: String
+    Default: nnm
+  DbPassword:
+    Type: String
+    NoEcho: true
+    MinLength: 12
+    Description: Master password for the RDS instance.
+  DbInstanceClass:
+    Type: String
+    Default: db.t4g.micro
+  JwtSecret:
+    Type: String
+    NoEcho: true
+    MinLength: 32
+    Description: HS256 signing secret (32+ chars). Generate with openssl rand -base64 32.
+  SenderEmail:
+    Type: String
+    Default: noreply@nnmadvisory.com
+  AdminEmail:
+    Type: String
+    Default: admin@nnmadvisory.com
+  CorsAllowedOrigin:
+    Type: String
+    Description: The frontend origin, e.g. https://www.nnmadvisory.com
+
+Resources:
+  # --- Security groups ----------------------------------------------------
+  ApiSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: NNM API tasks
+      VpcId: !Ref VpcId
+      Tags:
+        - { Key: Name, Value: !Sub '${AppName}-api-sg' }
+
+  RdsSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: NNM RDS - allow 5432 from API tasks only
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 5432
+          ToPort: 5432
+          SourceSecurityGroupId: !Ref ApiSecurityGroup
+      Tags:
+        - { Key: Name, Value: !Sub '${AppName}-rds-sg' }
+
+  # --- RDS ----------------------------------------------------------------
+  DbSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: NNM private DB subnets
+      SubnetIds: !Ref PrivateSubnets
+
+  Database:
+    Type: AWS::RDS::DBInstance
+    DeletionPolicy: Snapshot
+    UpdateReplacePolicy: Snapshot
+    Properties:
+      DBInstanceIdentifier: !Sub '${AppName}-db'
+      Engine: postgres
+      EngineVersion: '16'
+      DBInstanceClass: !Ref DbInstanceClass
+      AllocatedStorage: '20'
+      StorageType: gp3
+      StorageEncrypted: true
+      MasterUsername: !Ref DbUsername
+      MasterUserPassword: !Ref DbPassword
+      DBName: nnmdb
+      PubliclyAccessible: false
+      MultiAZ: false
+      BackupRetentionPeriod: 7
+      DBSubnetGroupName: !Ref DbSubnetGroup
+      VPCSecurityGroups:
+        - !Ref RdsSecurityGroup
+      Tags:
+        - { Key: Name, Value: !Sub '${AppName}-db' }
+
+  # --- S3 images bucket (private) -----------------------------------------
+  ImagesBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BucketName: !Sub '${AppName}-images-${AWS::AccountId}'
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  # --- SSM parameters (/nnm/*) --------------------------------------------
+  # NOTE: CloudFormation cannot create SecureString parameters directly.
+  # These are created as String; convert the sensitive ones to SecureString
+  # post-deploy (see README) or supply them out-of-band. The connection
+  # string and jwt secret below are the sensitive values.
+  SsmDbConnection:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /nnm/db/connection-string
+      Type: String
+      Value: !Sub 'Host=${Database.Endpoint.Address};Port=5432;Database=nnmdb;Username=${DbUsername};Password=${DbPassword};SSL Mode=Require;Trust Server Certificate=true'
+
+  SsmJwtSecret:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /nnm/jwt/secret
+      Type: String
+      Value: !Ref JwtSecret
+
+  SsmSenderEmail:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /nnm/ses/sender-email
+      Type: String
+      Value: !Ref SenderEmail
+
+  SsmAdminEmail:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /nnm/ses/admin-email
+      Type: String
+      Value: !Ref AdminEmail
+
+  SsmImagesBucket:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /nnm/s3/images-bucket
+      Type: String
+      Value: !Ref ImagesBucket
+
+  SsmCorsOrigin:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /nnm/cors/allowed-origin
+      Type: String
+      Value: !Ref CorsAllowedOrigin
+
+Outputs:
+  ApiSecurityGroupId:
+    Value: !Ref ApiSecurityGroup
+  DbEndpoint:
+    Value: !GetAtt Database.Endpoint.Address
+  ImagesBucketName:
+    Value: !Ref ImagesBucket

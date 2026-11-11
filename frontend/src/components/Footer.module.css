@@ -1,0 +1,79 @@
+/* ---------------------------------------------------------------------------
+ * Footer.module.css - McKinsey-style navy footer (Requirements 1.3, 1.4).
+ * Class names/structure preserved for the component + tests.
+ * ------------------------------------------------------------------------- */
+
+.footer {
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--c-navy);
+  color: var(--c-on-dark-dim);
+  padding: 3rem 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  border-top: 1px solid var(--c-line-dark);
+  padding-top: 2rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.companyName {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--c-on-dark-dim);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.link {
+  color: var(--c-on-dark-dim);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.link:hover,
+.link:focus {
+  color: #ffffff;
+}
+
+@media (max-width: 599px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

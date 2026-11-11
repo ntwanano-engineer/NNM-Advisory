@@ -1,0 +1,56 @@
+# ─── Secrets and local environment files ────────────────────────────────────
+# Real credential files — NEVER commit these.
+api/.env
+frontend/.env.local
+.env.local
+.env.*.local
+
+# ─── Dependencies ────────────────────────────────────────────────────────────
+**/node_modules/
+
+# ─── .NET build artefacts ────────────────────────────────────────────────────
+**/bin/
+**/obj/
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ─── Local uploads (image storage when IMAGE_STORAGE_PROVIDER=local) ────────
+uploads/
+
+# ─── Visual Studio user-specific files ──────────────────────────────────────
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# ─── Rider / JetBrains ───────────────────────────────────────────────────────
+.idea/
+
+# ─── OS-generated files ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Frontend build output ───────────────────────────────────────────────────
+frontend/dist/
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+# Keep docker-compose.yml tracked; ignore any override with real values.
+docker-compose.override.yml
+
+# --- Infra deploy secrets (CloudFormation) ---------------------------------
+infra/cloudformation/deploy.env
+
+# --- Generated frontend production env -------------------------------------
+frontend/.env.production
+
+# --- Personal source material (not for the repo) ---------------------------
+# The owner photos the app uses live in frontend/public/; these root copies
+# and the profile PDFs are personal documents kept out of version control.
+*.pdf
+*.jfif
+/Ntwanano Mabasa pic.jpg
+/Ntshovelo Priscilla Novela pic.jfif
+/NNM Advisory - Requirements Specification.docx

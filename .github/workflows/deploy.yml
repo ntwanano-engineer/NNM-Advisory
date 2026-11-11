@@ -1,0 +1,112 @@
+name: Deploy to AWS
+
+# Deploys the app on every push to main (after merge) or on manual dispatch.
+# Infrastructure stacks (CloudFormation) are deployed once from a workstation
+# using infra/cloudformation/deploy.sh; this workflow ships app changes:
+# API image -> ECR -> ECS, DB migrations, and the frontend bundle -> S3/CloudFront.
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+permissions:
+  id-token: write      # required for AWS OIDC
+  contents: read
+
+env:
+  AWS_REGION: af-south-1
+  APP: nnm
+
+jobs:
+  deploy:
+    name: Build & deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Resolve stack outputs
+        id: cfn
+        run: |
+          out() { aws cloudformation describe-stacks --stack-name "$1" \
+            --query "Stacks[0].Outputs[?OutputKey=='$2'].OutputValue" --output text; }
+          echo "images_bucket=$(out ${APP}-data ImagesBucketName)"      >> "$GITHUB_OUTPUT"
+          echo "cluster=$(out ${APP}-api ClusterName)"                  >> "$GITHUB_OUTPUT"
+          echo "taskdef=$(out ${APP}-api TaskDefinitionArn)"            >> "$GITHUB_OUTPUT"
+          echo "alb_dns=$(out ${APP}-api AlbDnsName)"                   >> "$GITHUB_OUTPUT"
+          echo "api_sg=$(out ${APP}-data ApiSecurityGroupId)"           >> "$GITHUB_OUTPUT"
+          echo "private_subnets=$(out ${APP}-network PrivateSubnets)"   >> "$GITHUB_OUTPUT"
+          echo "web_bucket=$(out ${APP}-frontend WebBucketName)"        >> "$GITHUB_OUTPUT"
+          echo "dist_id=$(out ${APP}-frontend DistributionId)"          >> "$GITHUB_OUTPUT"
+          echo "dist_domain=$(out ${APP}-frontend DistributionDomainName)" >> "$GITHUB_OUTPUT"
+
+      # --- API: build, push, deploy ------------------------------------------
+      - name: Login to ECR
+        id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build & push API image
+        env:
+          REGISTRY: ${{ steps.ecr.outputs.registry }}
+        run: |
+          IMG="$REGISTRY/${APP}-api:${GITHUB_SHA::7}"
+          LATEST="$REGISTRY/${APP}-api:latest"
+          docker build --platform linux/amd64 -t "$IMG" -t "$LATEST" ./api
+          docker push "$IMG"
+          docker push "$LATEST"
+          echo "image=$IMG" >> "$GITHUB_ENV"
+
+      - name: Update ECS service (rolling)
+        run: |
+          aws ecs update-service --cluster "${{ steps.cfn.outputs.cluster }}" \
+            --service "${APP}-api" --force-new-deployment >/dev/null
+          aws ecs wait services-stable --cluster "${{ steps.cfn.outputs.cluster }}" \
+            --services "${APP}-api"
+
+      - name: Run database migrations (one-off task)
+        run: |
+          TASK_ARN=$(aws ecs run-task \
+            --cluster "${{ steps.cfn.outputs.cluster }}" \
+            --task-definition "${{ steps.cfn.outputs.taskdef }}" \
+            --launch-type FARGATE \
+            --network-configuration "awsvpcConfiguration={subnets=[${{ steps.cfn.outputs.private_subnets }}],securityGroups=[${{ steps.cfn.outputs.api_sg }}],assignPublicIp=DISABLED}" \
+            --overrides '{"containerOverrides":[{"name":"api","environment":[{"name":"RUN_MIGRATIONS","value":"true"}]}]}' \
+            --query 'tasks[0].taskArn' --output text)
+          echo "migration task: $TASK_ARN"
+          aws ecs wait tasks-stopped --cluster "${{ steps.cfn.outputs.cluster }}" --tasks "$TASK_ARN"
+          CODE=$(aws ecs describe-tasks --cluster "${{ steps.cfn.outputs.cluster }}" --tasks "$TASK_ARN" \
+            --query 'tasks[0].containers[0].exitCode' --output text)
+          echo "migration exit code: $CODE"
+          test "$CODE" = "0"
+
+      # --- Frontend: build, sync, invalidate ---------------------------------
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Build frontend
+        working-directory: frontend
+        run: |
+          echo "VITE_API_URL=https://${{ steps.cfn.outputs.alb_dns }}" > .env.production
+          npm ci
+          npm run build
+
+      - name: Sync to S3 & invalidate CloudFront
+        run: |
+          aws s3 sync frontend/dist/ "s3://${{ steps.cfn.outputs.web_bucket }}/" --delete
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ steps.cfn.outputs.dist_id }}" --paths "/*" >/dev/null
+          echo "Deployed. Frontend: https://${{ steps.cfn.outputs.dist_domain }}"

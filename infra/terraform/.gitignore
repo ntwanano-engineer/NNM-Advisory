@@ -1,0 +1,17 @@
+# Terraform state & local artifacts — never commit these.
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Local variable files may contain account-specific values.
+terraform.tfvars
+*.auto.tfvars
+
+# Keep the example around.
+!terraform.tfvars.example
+
+# Plan output.
+*.tfplan
